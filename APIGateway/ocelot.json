@@ -1,0 +1,184 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/productos",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5208
+                }
+            ],
+            "UpstreamPathTemplate": "/productos",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamHttpMethod": "Get",
+            "SwaggerKey": "Productos",
+            "RateLimitOptions": {
+                "ClientIdHeader": "ClientId",
+                "ClientWhitelist": [],
+                "EnableRateLimiting": true,
+                "Period": "1m",
+                "PeriodTimespan": 60,
+                "Limit": 5
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/productos/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5208
+                }
+            ],
+            "UpstreamPathTemplate": "/productos/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamHttpMethod": "Get",
+            "SwaggerKey": "Productos"
+        },
+        {
+            "DownstreamPathTemplate": "/api/productos",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5208
+                }
+            ],
+            "UpstreamPathTemplate": "/productos",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamHttpMethod": "Post",
+            "SwaggerKey": "Productos"
+        },
+        {
+            "DownstreamPathTemplate": "/api/productos/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5208
+                }
+            ],
+            "UpstreamPathTemplate": "/productos/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamHttpMethod": "Put",
+            "SwaggerKey": "Productos"
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5180
+                }
+            ],
+            "UpstreamPathTemplate": "/libros",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamHttpMethod": "Get",
+            "SwaggerKey": "Libros",
+            "FileCacheOptions": {
+                "TtlSeconds": 5,
+                "Region": "default"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5180
+                }
+            ],
+            "UpstreamPathTemplate": "/libros/{id}",
+            "UpstreamHttpMethod": [ "Get" ],
+            "DownstreamHttpMethod": "Get",
+            "SwaggerKey": "Libros"
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5180
+                }
+            ],
+            "UpstreamPathTemplate": "/libros}",
+            "UpstreamHttpMethod": [ "Post" ],
+            "DownstreamHttpMethod": "Post",
+            "SwaggerKey": "Libros"
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5180
+                }
+            ],
+            "UpstreamPathTemplate": "/libros/{id}",
+            "UpstreamHttpMethod": [ "Put" ],
+            "DownstreamHttpMethod": "Put",
+            "SwaggerKey": "Libros"
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5180
+                }
+            ],
+            "UpstreamPathTemplate": "/libros/{id}",
+            "UpstreamHttpMethod": [ "Delete" ],
+            "DownstreamHttpMethod": "Delete",
+            "SwaggerKey": "Libros"
+        }
+
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://localhost:5205",
+        "SwaggerEndPoints": [
+            {
+                "Key": "Productos",
+                "Config": [
+                    {
+                        "Name": "Productos API",
+                        "Scheme": "http",
+                        "Host": "localhost",
+                        "Port": 5208,
+                        "Path": "/swagger/v1/swagger.json"
+                    }
+                ]
+            },
+            {
+                "Key": "Libros",
+                "Config": [
+                    {
+                        "Name": "Libros API",
+                        "Scheme": "http",
+                        "Host": "localhost",
+                        "Port": 5180,
+                        "Path": "/swagger/v1/swagger.json"
+                    }
+                ]
+            }
+        ],
+        "RateLimitOptions": {
+            "ClientIdHeader": "ClientId",
+            "ClientWhiteList": [],
+            "EnableRateLimiting": true,
+            "Period": "1m",
+            "PeriodTimespan": 60,
+            "Limit": 100
+        },
+        "FileCacheOptions": {
+            "ttlSeconds": 60,
+            "Region": "default"
+        }
+    }
+}
